@@ -64,7 +64,7 @@ def messages(price):
         x = "Low End"
     elif(price == 1):
         x = "Medium Cost"
-    elif price == 3:
+    elif price == 2:
         x = "High Cost"
     else:
         x = "Very High Cost"
