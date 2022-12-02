@@ -34,7 +34,7 @@ def show_predict_page():
     pc = st.slider("PC",0,20,10) #11
     px_height = st.slider("Pixel Resolution height",0,1960,100) #12 
     px_width = st.slider("Pixel Resolution width",500,1998,100) #13
-    ram = st.slider("RAM",256,2146,256)    #14
+    ram = st.slider("RAM",256,3998,256)    #14
     sc_height = st.slider("Screen height",5,19,12)  #15
     sc_width = st.slider("Screen width",0,18,5) #16
     talk_time = st.slider("Longest time that a single battery charge will last",2,20,11) #17
