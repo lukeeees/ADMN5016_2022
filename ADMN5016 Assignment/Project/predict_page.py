@@ -15,7 +15,8 @@ model_loaded = data['model']
 
 def show_predict_page():
     st.title("CellPhone Price Predictor")
-    st.write("""### We need some information to predict the price of Mobile Phone""")
+    st.write("""#### We need some information to predict the price of Mobile Phone""")
+    st.markdown("---")
     col1, col2 ,col3= st.columns(3)
     criteria = {
         "Yes": 1,
@@ -40,14 +41,14 @@ def show_predict_page():
     sc_width = col3.slider("Screen width",0,18,5) #16
     talk_time = col3.slider("Longest time that a single battery charge will last",2,20,11) #17
     touch_screen = col3.selectbox("Touch Screen", criteria) #18
-    wifi = col3.selectbox("Wifi", criteria)
+    wifi = col3.selectbox("Wifi", criteria) #19
 
     X = np.array([[battery_power,conv(blue), clock_speed,conv(dual_sim),fc,conv(four_g),int_memory,m_dep,mobile_wt,n_cores,pc,px_height,px_width,ram,sc_height,sc_width,talk_time,conv(touch_screen),conv(wifi)]])
     pred= model_loaded.predict(X)
 
     progress_bar = col3.progress(0)
     for perc_completed in range(100):
-        time.sleep(0.050)
+        time.sleep(0.010)
         progress_bar.progress(perc_completed+1)
     
     message = "Prediction: "+messages(pred[0])

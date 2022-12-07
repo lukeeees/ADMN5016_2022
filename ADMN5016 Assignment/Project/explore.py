@@ -16,9 +16,13 @@ def show_explore_page():
 
     df = pd.read_csv("MobilePrice.csv")
     st.title("Explore the Dataset")
+    st.markdown("---")
+    st.header("Dataframe")
     st.dataframe(df)
     
-
+    chart_data = df['price_range'].value_counts()
+    st.header("Cost distribution")
+    st.bar_chart(chart_data)
     
     
     
