@@ -47,7 +47,7 @@ def show_predict_page():
 
     progress_bar = col3.progress(0)
     for perc_completed in range(100):
-        time.sleep(0.050)
+        time.sleep(0.030)
         progress_bar.progress(perc_completed+1)
     
     message = "Prediction: "+messages(pred[0])
